@@ -35,7 +35,11 @@ const routes = [
         path: '/event/:id',
         redirect: () => {
           return { name: 'EventDetails' }
-        }
+        },
+        children: [
+          { path: 'register', redirect: () => ({ name: 'EventRegister' }) },
+          { path: 'edit', redirect: () => ({ name: 'EventEdit' }) }
+        ]
       },
       {
         path: 'edit',
