@@ -16,7 +16,7 @@ const routes = [
     })
   },
   {
-    path: '/event/:id',
+    path: '/events/:id',
     name: 'EventLayout',
     props: true,
     component: EventLayout,
@@ -30,6 +30,12 @@ const routes = [
         path: 'register',
         name: 'EventRegister',
         component: EventRegister
+      },
+      {
+        path: '/event/:id',
+        redirect: () => {
+          return { name: 'EventDetails' }
+        }
       },
       {
         path: 'edit',
