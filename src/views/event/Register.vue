@@ -9,8 +9,8 @@ export default {
   methods: {
     register() {
       this.$router.push({
-        name: 'EventDetails',
-        params: { id: this.event.id }
+        name: 'EventDetails'
+        // params: { id: this.event.id } not needed
       })
     }
   }
