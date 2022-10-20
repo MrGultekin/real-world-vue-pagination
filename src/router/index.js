@@ -32,22 +32,28 @@ const routes = [
         component: EventRegister
       },
       {
-        path: '/event/:id',
-        redirect: () => {
-          return { name: 'EventDetails' }
-        },
-        children: [
-          { path: 'register', redirect: () => ({ name: 'EventRegister' }) },
-          { path: 'edit', redirect: () => ({ name: 'EventEdit' }) }
-        ]
-      },
-      {
         path: 'edit',
         name: 'EventEdit',
         props: true,
         component: EventEdit
       }
     ]
+  },
+  // {
+  //   path: '/event/:id',
+  //   redirect: () => {
+  //     return { name: 'EventDetails' }
+  //   },
+  //   children: [
+  //     { path: 'register', redirect: () => ({ name: 'EventRegister' }) },
+  //     { path: 'edit', redirect: () => ({ name: 'EventEdit' }) }
+  //   ]
+  // },
+  {
+    path: '/event/:afterEvent(.*)',
+    redirect: to => {
+      return { path: '/events/' + to.params.afterEvent }
+    }
   },
   {
     path: '/about',
