@@ -6,6 +6,7 @@
 <script>
 export default {
   props: ['event'],
+  inject: ['GStore'],
   methods: {
     register() {
       this.$router.push({
