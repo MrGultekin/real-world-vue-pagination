@@ -9,6 +9,11 @@ export default {
   methods: {
     register() {
       this.$router.push({
+        //Call to API
+        //Set a message to appear on the next page
+
+        //If registered then redirect to event details
+
         name: 'EventDetails'
         // params: { id: this.event.id } not needed
       })
