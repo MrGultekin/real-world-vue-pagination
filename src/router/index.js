@@ -51,6 +51,7 @@ const routes = [
   //     { path: 'edit', redirect: () => ({ name: 'EventEdit' }) }
   //   ]
   // },
+
   {
     path: '/event/:afterEvent(.*)',
     redirect: to => {
